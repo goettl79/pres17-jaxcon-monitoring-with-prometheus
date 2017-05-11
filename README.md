@@ -9,6 +9,8 @@ ansible-playbook playbook.yml #adds necessary host entries to your /etc/hosts fi
 docker-compose up
 
 curl prometheus.jax.de
+curl grafana.jax.de
+curl gitblit.jax.de
 ```
 
 Have Fun and happy DevOps!
