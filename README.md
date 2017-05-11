@@ -4,6 +4,9 @@ The [presentation](prometheus-slides.md) can be viewed here (german). The demos 
 
 ```
 git clone https://github.com/goettl79/software-monitoring-with-prometheus.git
+cd software-monitoring-with-prometheus/demo-prom-monitoring-gitblit
+ansble-playbook playbook.yml #adds necessary host entries to your /etc/hosts file
+docker-compose up
 ```
 
 Have Fun and happy DevOps!
