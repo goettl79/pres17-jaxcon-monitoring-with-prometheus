@@ -1,0 +1,74 @@
+version: '3'
+services:
+
+  nginx-openresty:
+    image: "openresty/openresty:centos-rpm"
+    container_name: "nginx-openresty"
+    ports:
+          - 80:80
+    volumes:
+      - ./etc/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
+    depends_on:
+      - gitblit2
+      - gitblit1
+      - prometheus
+      - grafana
+
+  gitblit1:
+    image: "goettl/gitblit"
+    container_name: "gitblit1"
+    ports:
+         - 8080:8080
+    volumes:
+      - gitblit-data:/opt/gitblit-data/git
+
+  gitblit2:
+    image: "goettl/gitblit"
+    container_name: "gitblit2"
+    ports:
+         - 8081:8080
+    volumes:
+      - gitblit-data:/opt/gitblit-data/git
+
+  prometheus:
+    image: "prom/prometheus:v1.6.1"
+    container_name: "prometheus"
+    ports:
+          - 9090:9090
+    volumes:
+          - ./etc/prometheus.yml:/etc/prometheus/prometheus.yml
+          - ./etc/alert-http-latency.rules:/etc/prometheus/alert-http-latency.rules
+          - prometheus-data:/prometheus
+
+  prometheus_alertmanager:
+    image: "prom/alertmanager:v0.6.1"
+    container_name: "prometheus-alertmanager"
+    ports:
+          - 9093:9093
+
+  grafana:
+    image: "grafana/grafana:4.2.0"
+    container_name: "grafana"
+    ports:
+          - 3000:3000
+    depends_on:
+      - prometheus
+    volumes:
+      - grafana-data:/var/lib/grafana
+
+  cadvisor:
+      image: google/cadvisor
+      container_name: "cadvisor"
+      command: -docker_only
+      ports:
+        - "8082:8080"
+      volumes:
+        - "/:/rootfs:ro"
+        - "/var/run:/var/run:rw"
+        - "/sys:/sys:ro"
+        - "/var/lib/docker/:/var/lib/docker:ro"
+
+volumes:
+  gitblit-data:
+  prometheus-data:
+  grafana-data:

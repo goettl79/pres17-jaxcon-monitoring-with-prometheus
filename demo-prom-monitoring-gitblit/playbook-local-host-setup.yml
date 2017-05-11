@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+
+  tasks:
+  - lineinfile:
+      path: "/etc/hosts"
+      line: "{{item}}"
+    become: True
+    with_items:
+      - "#### Start Hosts for jax.de demo"
+      - "127.0.0.1 gitblit.jax.de"
+      - "127.0.0.1 prometheus.jax.de"
+      - "127.0.0.1 prometheus-data.jax.de"
+      - "127.0.0.1 prometheus-am.jax.de"
+      - "127.0.0.1 grafana.jax.de"
+      - "#192.168.99.100 gitblit.jax.de"
+      - "#192.168.99.100 prometheus.jax.de"
+      - "#192.168.99.100 prometheus-data.jax.de"
+      - "#192.168.99.100 prometheus-am.jax.de"
+      - "#192.168.99.100 grafana.jax.de"
+      - "#### End Hosts for jax.de demo"

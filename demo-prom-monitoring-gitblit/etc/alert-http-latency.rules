@@ -1,0 +1,8 @@
+ALERT Http5xErrors
+  IF rate(http_requests_total{status=~"5.*"}[1m])  > 0
+  LABELS { severity = "critical"}
+
+ALERT DDOS
+  IF rate(http_requests_total[1m])  > 4
+  LABELS { severity = "critical"}
+

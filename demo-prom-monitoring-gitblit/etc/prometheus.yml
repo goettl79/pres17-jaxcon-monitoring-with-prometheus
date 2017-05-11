@@ -1,0 +1,26 @@
+global:
+  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+
+  external_labels:
+      monitor: 'codelab-monitor'
+
+rule_files:
+  - '/etc/prometheus/alert-http-latency.rules'
+
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['prometheus:9090']
+
+  - job_name: 'gitblit'
+    metrics_path: '/prometheus'
+    static_configs:
+      - targets: ['gitblit1:8080','gitblit2:8080']
+
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
+
+
