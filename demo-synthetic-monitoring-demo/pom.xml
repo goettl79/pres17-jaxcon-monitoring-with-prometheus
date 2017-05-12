@@ -9,7 +9,7 @@
         <groupId>de.jax</groupId>
     </parent>
 
-    <artifactId>synthetic-monitoring-demo</artifactId>
+    <artifactId>demo-synthetic-monitoring-demo</artifactId>
 
     <dependencies>
         <dependency>
