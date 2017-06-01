@@ -5,21 +5,22 @@ Germany.  The presentation can be (re)viewed [here](prometheus-slides.md) (germa
 All sources and setups are naturally contained in the git repo backing this page.
 
 ```
+# Setup environment 
 git clone https://github.com/goettl79/software-monitoring-with-prometheus.git
 cd software-monitoring-with-prometheus/demo-prom-monitoring-gitblit
-ansible-playbook playbook.yml #adds necessary host entries to your /etc/hosts file
+ansible-playbook playbook-local-host-setup.yml #adds necessary host entries to your /etc/hosts file
 docker-compose up
 
-curl prometheus.jax.de
-curl grafana.jax.de
-curl gitblit.jax.de
+# Start Browser on Services
+google-chrome prometheus.jax.de & \
+google-chrome grafana.jax.de/dashboard/db/http-latency-monitoring & \
+google-chrome gitblit.jax.de & 
 
-cd demo-synthetic-monitoring-demo
-mvn install test
+# Start Integration / Performance Tests
+mvn install  test -f ../demo-synthetic-monitoring-demo/pom.xml
 ```
 
-As I'm alwas appreciating feedback, please contact me under my by twitter handle 
-@goettl
+As I'm alwas appreciating feedback, please contact me by twitter. Handle  [@goettl](https://twitter.com/goettl) 
 
 Have Fun and happy DevOps!
 
