@@ -125,13 +125,31 @@
 
       }
       .cite {font-size: 0.8em; color:#33AA99;font-style: italic}
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      .twitter {
+              position: absolute;
+              bottom: 0.3em;
+              left: 0.5em;
+      }
 
     </style>
   </head>
   <body>
     <textarea id="source">
 
-class: middle, center
+---
+
+name: twitter 
+layout: true 
+
+.twitter[<a href="https://twitter.com/goettl" class="twitter-follow-button" data-show-count="false">Follow @goettl</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>]
+
+---
+
+class: middle,center
 
 # Softwaremonitoring mit Prometheus
 .center[Georg Öttl]
@@ -173,7 +191,7 @@ class: middle, left
 
 .right-column[
 ![image](img/me.jpg)
-**Twitter @goettl** 
+**.center[Twitter @goettl]** 
 ]
 
 ---
@@ -494,6 +512,22 @@ class: middle, center
       var slideshow = remark.create();
       MathJax.Hub.Configured();
     </script>
+    <script>window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    
+      t._e = [];
+      t.ready = function(f) {
+        t._e.push(f);
+      };
+    
+      return t;
+    }(document, "script", "twitter-wjs"));</script>
   </body>
 </html>
 
