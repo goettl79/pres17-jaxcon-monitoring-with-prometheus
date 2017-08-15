@@ -140,13 +140,14 @@
   <body>
     <textarea id="source">
 
----
+
 
 name: twitter 
 layout: true 
 
 .twitter[<a href="https://twitter.com/goettl" class="twitter-follow-button" data-show-count="false">Follow @goettl</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>]
-
+ 
+ 
 ---
 
 class: middle,center
