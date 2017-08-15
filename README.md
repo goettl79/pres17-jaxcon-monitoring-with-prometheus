@@ -2,7 +2,7 @@ This page/repo contains the slides and demos from the presentation on Software
 Monitoring with Prometheus given at 
 [Jax2017](https://jax.de/session/software-monitoring-mit-prometheus/) in Mainz, 
 Germany. The presentation can be (re)viewed by clicking here: 
-<a href="./prometheus-slides.md" target="_blank" type="text/html"><b>"Software 
+<a href="./prometheus-slides.html" target="_blank" type="text/html"><b>"Software 
 Monitoring with Prometheus"</b>, Georg Öttl, Jax2017, Mainz</a>. 
 All sources and setups are naturally contained in the git repo backing this page.
 
