@@ -1,11 +1,18 @@
-This page/repo contains the slides and demos from the presentation on Software 
+# Software Monitoring with Prometheus
+
+This page contains the slides and demos from the presentation on Software 
 Monitoring with Prometheus given at 
 [Jax2017](https://jax.de/session/software-monitoring-mit-prometheus/) in Mainz, 
-Germany. The presentation can be (re)viewed by clicking here: 
-<a href="https://goettl79.github.io/software-monitoring-with-prometheus/prometheus-slides.md.html" 
-target="_blank" type="text/html"><b>"Software 
-Monitoring with Prometheus"</b>, Georg Öttl, Jax2017, Mainz</a>. 
-All sources and setups are naturally contained in the git repo backing this page.
+Germany.  As I'm always appreciating feedback please 
+<a href="https://twitter.com/intent/tweet?screen_name=goettl&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">tweet to @goettl</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+
+## Slides
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/aESk1Ik2S0MFSJ" width="560" height="315" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/secret/aESk1Ik2S0MFSJ" title="Analyze prometheus metrics like a data scientist" target="_blank">Analyze prometheus metrics like a data scientist</a> </strong> from <strong><a href="https://www.slideshare.net/GeorgOettl" target="_blank">Georg Öttl</a></strong> </div>
+<br>
+<a href="./prometheus-slides.md.html" target="_blank" type="text/html"><b>Slides Source, Happy DevOps!</b></a> 
+
+## Demo Setup Instructions
 
 ```
 # Setup environment 
@@ -22,8 +29,4 @@ google-chrome gitblit.jax.de &
 # Start Integration / Performance Tests
 mvn install  test -f ../demo-synthetic-monitoring-demo/pom.xml
 ```
-
-As I'm alwas appreciating feedback, please contact me by twitter. Handle  [@goettl](https://twitter.com/goettl) 
-
-Have Fun and happy DevOps!
 
